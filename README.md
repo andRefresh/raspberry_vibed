@@ -1,4 +1,4 @@
-Raspberry Pi vibe.d template
+Raspberry Pi vibe.d tutorial
 ============================
 A tutorial/template to build a vibed web application on a raspberryPi board.
 The board can be used as a REST server to use the Pi IO with the `dgpio` dub package.
