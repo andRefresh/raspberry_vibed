@@ -36,7 +36,8 @@ Open a terminal and digit:
 sudo apt-get install gcc-arm-linux-gnueabihf
 ```
 
-## LDC Runtime
+LDC Runtime
+-----------
 Follow the instructions here: [Building_LDC_runtime_libraries](https://wiki.dlang.org/Building_LDC_runtime_libraries).
 Again: make sure to have the dependencies required
 
@@ -56,9 +57,10 @@ $LDC2_DIR/bin/ldc-build-runtime --ninja --dFlags="-w;-mtriple=arm-linux-gnueabih
 ```
 This will build the `ldc-build-runtime.tmp` folder you can link at after at build time.
 
-Vibed has two external dependencies that need a manual cross compilation (or a properlyj setted cross-gcc toolchain):
+Vibe.d has two external dependencies that need a manual cross compilation (or a properly setted cross-gcc toolchain):
 
-##OpenSSL
+OpenSSL
+--------
 
 ```sh
 git clone https://github.com/openssl/openssl
@@ -74,7 +76,7 @@ export INSTALL-DIR=/path/to/openssl/install/dir
 --prefix=$INSTALL_DIR --openssldir=$INSTALL_DIR/openssl \
 --cross-compile-prefix=arm-linux-gnueabihf-
 ```
-*Note*: look at the cross compile prefix variabile. I will append `gcc` automatically. It must use the same compiler used for the ldc runtime.
+*Note*: look at the cross compile prefix variabile. It will append `gcc` automatically. It must use the same compiler used for the ldc runtime.
 
 Then finally:
 
@@ -84,7 +86,9 @@ make install
 ```
 The folder user for the `INSTALL-DIR` now contains the libraries cross-compiled. You can see an example in the `lib` folder.
 
-##ZLIB
+ZLIB
+----
+
 Finally let's cross compile the *ZLIB* library.
 Download it from the [ZLIB_Website](https://zlib.net).
 As done for the open-ssl:
