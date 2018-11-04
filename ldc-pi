@@ -1,0 +1,7 @@
+#!/bin/sh
+LDC2_DIR=/home/andrea/sviluppo/dlang/ldc2-1.12.0-linux-x86_64
+LDC2RUNTIME_DIR=/home/andrea/sviluppo/dlang/raspberry_vibed/lib/arm/ldc-build-runtime.tmp
+OPENSSL_DIR=/home/andrea/sviluppo/dlang/raspberry_vibed/lib/arm/openssl
+ZLIB_DIR=/home/andrea/sviluppo/dlang/raspberry_vibed/lib/arm/zlib
+
+${LDC2_DIR}/bin/ldc2 -mtriple=arm-linux-gnueabihf -gcc=arm-linux-gnueabihf-gcc -L=-L${LDC2RUNTIME_DIR}/lib -L=-L${OPENSSL_DIR}/lib -L=-L${ZLIB_DIR}/lib $@
